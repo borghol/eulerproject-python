@@ -1,15 +1,11 @@
+import math
 
-num = 0
-i = 20
+def lcm(a,b):
+    gcd = math.gcd(a,b)
+    return((abs(a*b)//gcd))
 
-def isDivisible(num, fro, to):
-    for i in range(to, fro, -1):
-        if num % i != 0:
-            return False
-    return True
+max = 2
+for i in range(2,21):
+    max=lcm(max,i)
 
-while True:
-    if isDivisible(i, 1, 20):
-        print("Smallest Number divisible by numbers 1-20: " + i)
-        exit(0)
-    i += 1
+print(max)
