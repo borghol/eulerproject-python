@@ -42,9 +42,11 @@ for i in range(1, 1000):
         else:
             sum += numberMappings[(num[0]+'0')] + numberMappings[num[1]]
     if len(num) == 3:
-        sum += numberMappings[num[0]] + 10
-        if i < 20:
-            sum += numberMappings[num]
+        sum += numberMappings[num[0]] + 7
+        if num[1] != '0' or num[2] != '0':
+            sum+= 3
+        if int(num[1::]) < 20:
+            sum += numberMappings[str(int(num[1::]))]
         else:
             sum += numberMappings[(num[1]+'0')] + numberMappings[num[2]]
     print(i, sum)
