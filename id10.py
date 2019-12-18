@@ -10,7 +10,6 @@ smallerPrimes = [2]
 sumOfPrimes = 2
 
 for i in range(3, 2000000, 2):
-    print(i)
     if (isPrimeGivenSmallerPrimes(i, smallerPrimes)):
         smallerPrimes.append(i)
         sumOfPrimes += i
