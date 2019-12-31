@@ -6,27 +6,14 @@ def is_pentagonal(n):
 def getPentagonal(n):
     return n * (3*n - 1) / 2
 
-diff = 1
-# found = False
-
-maxi = 5000
-pentagonals = []
-
 i = 1
-while len(pentagonals) < maxi:
-    pentagonals.append(getPentagonal(i))
+found = False
 
-print(is_pentagonal(2167 + 1020) and is_pentagonal(2167 - 1020))
-exit(0)
-
-
-while diff < len(pentagonals):
-    i = 0
-    while i + diff < len(pentagonals):
-        print(i, diff)
-        if is_pentagonal(pentagonals[i] + pentagonals[i+diff]) and is_pentagonal(pentagonals[i+diff] - pentagonals[i]):
-            print(pentagonals[i+diff] - pentagonals[i])
+while not found:
+    for j in range (i-1, 0, -1):
+        n = getPentagonal(i)
+        m = getPentagonal(j)
+        if (is_pentagonal(n+m) and is_pentagonal(n-m)):
+            print(i, j, getPentagonal(i) - getPentagonal(j))
             exit(0)
-        i += 1
-    diff += 1
-
+    i += 1
